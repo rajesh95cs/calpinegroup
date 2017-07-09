@@ -15,25 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url ,include
 from django.contrib import admin
-from rest_framework.routers import DefaultRouter
-from Employee.views import EmployeeViewSet
-
-router = DefaultRouter()
-router.register(prefix='employees', viewset=EmployeeViewSet)
-
-urlpatterns = router.urls
 
 
-
-
-
-
-
-
-
-
-#urlpatterns = [
- #   url(r'^Events/',include('Events.urls')),  
-  #  url(r'^admin/', admin.site.urls),
-    
-#]
+urlpatterns = [
+ #   url(r'^Events/',include('Events.urls')),
+  url(r'^admin/', admin.site.urls),
+  url(r'^employee/', include('Employee.urls'))
+]
